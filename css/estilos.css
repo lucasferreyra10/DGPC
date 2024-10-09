@@ -341,8 +341,7 @@ ul {
 .sobre_mi {
     text-align: center;
     margin-inline: auto;
-    max-width: 50rem;    
-   
+    max-width: 50rem;
 }
 
 .contenedor_equipo {
@@ -359,6 +358,7 @@ ul {
 }
 
 .sobre_mi p {
+    text-align: center;
     width: 500px;
     padding: 1rem;
 }
@@ -466,6 +466,7 @@ h2 {
 }
 
 h1 {
+    text-align: center;
     font-size: 2em;
     padding: 15px;
 }
