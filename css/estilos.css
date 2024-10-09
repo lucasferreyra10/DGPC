@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden; /* elimina el desplazamiento horizontal general */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0f352e;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+header .logo {
+    /* ancho igual al valor menor entre:
+     todo el ancho disponible y
+     120px */
+    width: 6rem;
+  
+    /* color del fondo */
+    background-color: hsl(0 0% 95%);
+  
+    float: left;
+
+  }
+
+  /* solo la imagen contenida en el bloque HTML
+  que tiene atributo "id" igual a "logo"  */
+.logo img {
+    /* cambiar de
+      etiqueta tipo en linea
+      a etiqueta tipo bloque
+      para darle propiedades de bloque */
+      display: block;
+    
+      /* relleno (espacio entre la imagen y el borde) */
+      padding: .5rem .75rem;
+      /* si hay DOS valores,
+      el 1er valor es el relleno arriba y abajo,
+      el 2do valor es el relleno a izquierda y derecha */
+    
+      /* todo el ancho del bloque que la contiene */
+      width: 6rem;
+    }
+
+header nav ul {
+    display: flex;
+    gap: .25rem;
+    flex-wrap: wrap;
+    margin-block: 0;
+}
+
+
+.boton_menu {
+    list-style-type: none;
+    padding: 10px 20px;
+    text-align: end; 
+}
+
+.boton_menu li a {
+    display: inline-block;
+    color: #eeebe4;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 2px;
+    background-color: #14463d;
+    color: #eeebe4;
+    border-radius: 5px;
+}
+
+.boton_menu li a:hover {
+    background-color: #1a1b1b;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #282828;
+    background-color: #eeebe4;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    color: #14463d;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+    text-wrap: balance;
+    max-width: 100%; /* limita el ancho del texto */
+    overflow: visible; /* evita barras de desplazamiento innecesarias */
+    white-space: normal; /* asegura que el texto se ajuste y no cause desbordamiento */
+}
+
+a {
+    text-decoration: none;
+    color: #14463d;
+    font-weight: bold;
+}
+
+._materias {
+    text-align: center;
+}
+
+.contenedor_materias h3 {
+    /* "subrayado" o lÃ­nea en todo lo ancho */
+  border-block-end: 3px solid #0c302a;
+  
+  /* separa el "subrayado" del texto */
+  padding-block-end: .27rem;
+    margin: 0;
+    font-size: x-large;
+}
+
+.materias_aprobadas {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+.materias_encurso {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: disc; /* vuelve a mostrar los puntitos de las listas */
+    padding-left: 20px; /* agrega un pequeño espacio a la izquierda */
+    text-align: left;
+}
+
+.boton_equipo {
+ 
+    list-style-type: none;
+    padding: 0; 
+    text-align: center; 
+    padding: 1rem;
+}
+
+.boton_equipo li {
+    display: inline-block;
+    margin: 10px 50px;
+}
+
+.boton_equipo li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #14463d;
+    color: #eeebe4;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.boton_equipo li a:hover {
+    background-color: #0c302a;
+}
+
+.sobre_mi {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 50rem;    
+   
+}
+
+.contenedor_equipo {
+  text-align: center;
+}
+
+/* Estilos para cada botón dentro de los elementos del equipo */
+.contenedor_equipo li {
+  text-align: center;
+}
+
+.sobre_mi img {
+    width: 300px;  
+}
+
+.sobre_mi p {
+    width: 500px;
+    padding: 1rem;
+}
+
+footer p {
+    background-color: #0f352e;
+    color: #eeebe4;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0;
+}
+
+p:first-child,
+li:first-child {
+    margin-block-start: 0;
+}
+
+.academicos figure {
+    aspect-ratio: 2;
+    padding: .3rem;
+}
+
+.academicos img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.academicos figure {
+    width: min(100%, 10em);
+    aspect-ratio: 1;
+    width: 15em;
+}
+
+.link_imagen {
+    display: inline-block; 
+    text-decoration: none;
+}
+
+.imagen_logo {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.imagen_logo:hover {
+    transform: scale(1.1);
+}
+
+.academicos > ul {
+    /* contenedor tipo cuadricula */
+    display: grid;
+  
+    /* plantilla de columnas:
+    --> que los elementos "llenen" todo el espacio horizontal con un ancho base de 320px (20rem) para que...
+    en celulares quepa una institucion a lo ancho,
+    en tabletas quepan 2, lado a lado,
+    y en escritorio quepan 3, lado a lado  */
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  
+    /* separacion entre instituciones 1 renglon */
+    gap: 1em;
+  }
+  
+.academicos ul {
+    list-style: none;
+}
+
+  /* cada institucion */
+  .academicos > ul > li {
+    /* caja flexible */
+    display: flex;
+    /* si el texto no cabe, se va para abajo */
+    flex-wrap: wrap;
+    /* espacio entre foto y texto: 1 renglon */
+    gap: 1em;
+    /* elementos alineados a la izquierda */
+    justify-content: flex-start;
+    /* elementos alineados por arriba, en la vertical */
+    align-items: flex-start;
+    /* si hay mas de una linea de elementos, los elementos de CADA linea alineados por arriba, en la vertical */
+    align-content: flex-start;
+    max-width: 30rem;
+    padding: 2rem;
+  }
+  
+  .academicos img {
+    text-align: center;
+    width: 250px;
+  }
+
+  /* para eliminar márgenes superiores predeterminados de los titulos */
+  .academicos h3 {
+    text-align: left;
+    margin-block-start: 0;
+  }
+
+h2 {
+    background-color: white;
+    width: 100vw;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 15px;
+}
+
+h4 {
+    text-align: left;
+    padding: 15px;
+}
