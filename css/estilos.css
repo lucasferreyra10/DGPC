@@ -177,8 +177,34 @@ ul {
 .sobre_mi {
     text-align: center;
     margin-inline: auto;
-    max-width: 50rem;    
+    max-width: 50rem;
+        /* el ancho será el menor de dos valores:
+    1040px (65rem) o 
+    todo el ancho disponible MENOS 3 renglones (para que en tabletas y celulares no queden pegados a los bordes de la ventana) */
+    width: min(65rem, calc(100% - 3rem));
+    /*
+    la declaración anterior equivale a juntar
+    dos declaraciones vistas en clase teorica:
+    
+    width: calc(100% - 3rem);
+    (el ancho será todo el ancho disponible MENOS 1½ renglón de cada lado...)
+    
+    max-width: 65rem;
+    (...PERO no será mayor que 1040px)
+    */
+  
+    /* centrado horizontal (si sobra espacio,
+      lo distribuye a izquierda y derecha por igual) */
+    margin-inline: auto;
    
+}
+
+.sobre_mi img {
+    width: 300px;  
+}
+
+.sobre_mi p {
+    padding: 1rem;
 }
 
 .contenedor_equipo {
@@ -188,15 +214,6 @@ ul {
 /* Estilos para cada botón dentro de los elementos del equipo */
 .contenedor_equipo li {
   text-align: center;
-}
-
-.sobre_mi img {
-    width: 300px;  
-}
-
-.sobre_mi p {
-    width: 500px;
-    padding: 1rem;
 }
 
 footer p {
