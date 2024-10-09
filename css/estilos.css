@@ -207,6 +207,20 @@ body {
     color: #282828;
     background-color: #eeebe4;
     margin: 0;
+
+        /* medira, como minimo, la altura del navegador */  
+    min-height: 100dvh;
+  
+        /* contenedor tipo cuadri­cula */
+    display: grid;
+      
+        /* plantilla de filas: dos filas definidas
+        (si hubiera otras, mediran la altura de su contenido)...
+        La primera fila definida, conteniendo "header",
+        medirá la altura de su contenido...
+        La segunda fila definida, conteniendo "main",
+        se estirara para "llenar" el espacio restante */
+    grid-template-rows: auto 1fr;
 }
 
 p {
