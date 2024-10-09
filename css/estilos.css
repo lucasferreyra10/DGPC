@@ -20,6 +20,72 @@ header {
     gap: 2rem;
 }
 
+/* 
+Se quiere que el logo quede a la izquierda y el menu de navegación a la derecha.
+Para lograrlo, se necesita que el componente "header" (padre de ambos) tenga dos columnas.
+*/
+header {
+    /* contenedor tipo cuadri­cula */
+    display: grid;
+  
+    /* plantilla de columnas: dos columnas definidas.
+    La primera columna definida, conteniendo "#logo",
+    medira 8 "renglones" (128px) de ancho.
+    La segunda columna definida, conteniendo "nav",
+    se estirara para "llenar" el espacio restante */
+    grid-template-columns: 8rem 1fr;
+  
+    /* espacio minimo entre las columnas */
+    gap: 2rem;
+  
+    /* alineación vertical */
+    align-items: center;
+  }
+
+  /*
+En reglas de estilo definidas antes se habían especificado margenes para separar los elementos contenidos en "header".
+ahora, los elementos se diagramaran con "grid" por lo que se los separará con la propiedad "gap" cuando sea necesario.
+*/
+header *,
+/* todos los elementos contenidos en "header" */
+/* y, como el selector de una regla de estilo definida antes tiene mas "especificidad" que el selector de la linea 584, se necesita un selector igual o mas especifico para que se aplique la regla de estilo definida a seguir */
+header nav ul li {
+  /* elimina los margenes definidos anteriormente */
+  margin: 0;
+}
+
+/* 
+El menu de navegacion es horizontal, es decir, los items de lista deben quedar alineados horizontalmente.
+Para ello se debe definir como "grid" el componente que los contiene,
+la lista dentro de "nav".
+*/
+header nav ul {
+    /* contenedor tipo cuadri­cula */
+    display: grid;
+  
+    /* plantilla de columnas
+    --> que los elementos "llenen" todo el espacio horizontal con un ancho base de 80px por link (5rem) para que...
+    en celulares quepan dos vinculos a lo ancho,
+    en tabletas y en escritorio quepan 4, lado a lado  */
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  
+    /* espacio minimo entre los items de la lista */
+    gap: .5rem;
+  
+    /* 
+    en una sola declaracion se resumen dos declaraciones:
+  
+    max-width: 30rem;
+    width: 100%;
+    
+    es decir, se limita el ancho del menu de navegacion a 30rem (480px) y se hace que el componente ocupe todo el espacio horizontal disponible si es menor a 30rem
+    */
+    width: min(100%, 30rem);
+  
+    /* cuando el ancho de "nav" es mayor a 30rem, el espacio que sobra quedara a la izquierda y el menu se va a la derecha */
+    margin-inline-start: auto;
+  }
+
 header .logo {
     /* ancho igual al valor menor entre:
      todo el ancho disponible y
@@ -51,14 +117,6 @@ header .logo {
       /* todo el ancho del bloque que la contiene */
       width: 6rem;
     }
-
-header nav ul {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-block: 0;
-}
-
 
 .boton_menu {
     list-style-type: none;
@@ -93,6 +151,19 @@ body {
     color: #282828;
     background-color: #eeebe4;
     margin: 0;
+    /* medira, como minimo, la altura del navegador */  
+    min-height: 100dvh;
+  
+    /* contenedor tipo cuadri­cula */
+    display: grid;
+   
+    /* plantilla de filas: dos filas definidas
+    (si hubiera otras, mediran la altura de su contenido)...
+    La primera fila definida, conteniendo "header",
+    medirá la altura de su contenido...
+    La segunda fila definida, conteniendo "main",
+    se estirara para "llenar" el espacio restante */
+    grid-template-rows: auto 1fr;
 }
 
 h1, h2, h3, h4 {
